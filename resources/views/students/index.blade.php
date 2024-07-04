@@ -41,6 +41,30 @@
                                     <th>Operations</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @foreach ($students as $student)
+                                <tr>
+                                    <td>{{$student->id}}</td>
+                                    <td>{{$student->name}}</td>
+                                    <td>{{$student->email}}</td>
+                                    <td>{{$student->tel}}</td>
+                                    <td class="d-flex">
+                                        <a href="{{route('student.show',[$student->id])}}"
+                                            class=" btn btn-warning ">Show</a>
+
+                                        <a href="{{route('student.edit',[$student->id])}}"
+                                            class=" btn btn-primary ">Edit</a>
+
+                                        <form action="{{route('student.destroy',[$student->id])}}" method="POST">
+                                            {{-- [$student->id] helps to fetch the id of the datas--}}
+                                            @csrf
+                                            @method("DELETE")
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>

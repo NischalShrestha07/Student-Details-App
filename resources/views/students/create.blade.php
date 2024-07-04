@@ -20,10 +20,10 @@
                 <div class="card">
                     <h1 class="bg-light text-center text-success">CRUD IN LARAVEL</h1>
                     <div class="card-header bg-dark text-white d-flex justify-content-between">
-                        <a href=" " class="btn btn-primary">BACK</a>
+                        <a href=" {{route('students.index')}}" class="btn btn-primary">BACK</a>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('students.index')}}" method="POST">
+                        <form action="{{route('students.store')}}" method="POST">
                             <div class="form-group m-3 p-1">
                                 <label for="" class="h3">Name</label>
                                 <input class="form-control" type="text" name="name" placeholder="Enter Your Name">

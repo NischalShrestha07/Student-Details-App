@@ -13,7 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view('students.index', compact('students'));
+        return view('students.index', ['students' => $students]);
     }
 
     /**
@@ -31,23 +31,27 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:students',
-            'address' => 'required',
-            'tel' => 'required|unique:students',
-            'course' => 'required'
-        ]);
-        Student::create($request->all());
+        $students = new Student;
+
+        $students->name = $request->name;
+        $students->email = $request->email;
+        $students->address = $request->address;
+        $students->tel = $request->tel;
+        $students->course = $request->course;
+        $students->save();
+
         return redirect()->route('students.index')->with('success', 'Student Details added successfully. ');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Student $student)
     {
         //
+        return view('students.show', [
+            'students' => $student
+        ]);
     }
 
     /**
