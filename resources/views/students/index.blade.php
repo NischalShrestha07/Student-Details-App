@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <h1 class="bg-light text-center text-success">CRUD IN LARAVEL</h1>
-                    <div class="card-header bg-dark text-white d-flex justify-content-center">
+                    <div class="card-header bg-dark text-white d-flex justify-content-between">
                         <h3>List of Students</h3>
                         <a href="{{route('students.create')}} " class="btn btn-primary">+Add Student</a>
                     </div>
@@ -33,6 +33,8 @@
                                     <th>Email</th>
                                     <th>Address</th>
                                     <th>Phone Number</th>
+                                    <th>Course</th>
+                                    <th>Operations</th>
                                 </tr>
                             </thead>
                         </table>
