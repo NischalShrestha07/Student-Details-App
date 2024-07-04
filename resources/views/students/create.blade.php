@@ -20,6 +20,34 @@
                 <div class="card">
                     <h1 class="bg-light text-center text-success">CRUD IN LARAVEL</h1>
                     <div class="card-header bg-dark text-white d-flex justify-content-between">
+                        <a href=" " class="btn btn-primary">BACK</a>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('students.index')}}" method="POST">
+                            <div class="form-group m-3 p-1">
+                                <label for="" class="h3">Name</label>
+                                <input class="form-control" type="text" name="name" placeholder="Enter Your Name">
+                            </div>
+                            <div class="form-group m-3 p-1">
+                                <label for="" class="h3">Email</label>
+                                <input class="form-control" type="text" placeholder="Enter Your Email" name="email">
+                            </div>
+                            <div class="form-group m-3 p-1">
+                                <label for="" class="h3">Address</label>
+                                <input class="form-control" type="text" placeholder="Enter Your Address" name="address">
+                            </div>
+                            <div class="form-group m-3 p-1">
+                                <label for="" class="h3">Phone Number</label>
+                                <input class="form-control" type="tel" placeholder="Enter Your Phone Number" name="tel">
+                            </div>
+                            <div class="form-group m-3 p-1">
+                                <label for="" class="h3">Course</label>
+                                <input class="form-control" type="text" placeholder="Enter Your Course" name="course">
+                            </div>
+                            <div class="form-group m-4">
+                                <div class="btn btn-primary">+ADD</div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

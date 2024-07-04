@@ -16,6 +16,10 @@
 <body>
     <div class="container">
         <div class="row">
+            @if (@session('success'))
+            <div class="alert alert-success">{{session('success')}}</div>
+
+            @endif
             <div class="col-md-12">
                 <div class="card">
                     <h1 class="bg-light text-center text-success">CRUD IN LARAVEL</h1>
